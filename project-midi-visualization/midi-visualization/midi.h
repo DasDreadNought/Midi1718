@@ -2,12 +2,12 @@
 #define MIDI_H
 
 #include <stdint.h>
-#include "functions.h"
-#include "endianness.h"
 #include <string>
 #include <vector>
-
 #include <memory>
+#include "functions.h"
+#include "endianness.h"
+#include "bitmap.h"
 
 
 struct CHUNK_HEADER
@@ -38,6 +38,7 @@ struct NOTE {
 	friend bool operator !=(const NOTE& one, NOTE& other) {
 		return !(one == other);
 	}
+	int end() const { return (int)(start + duration); }
 
 };
 
@@ -66,8 +67,8 @@ bool read_mtrk(std::istream& in, EventReceiver&);
 
 class NoteFilter : public EventReceiver {
 public:
-	int time = 0;
-	int channel;
+	uint32_t time = 0;
+	uint8_t channel;
 	std::vector<NOTE>* notes;
 	uint32_t noteArray[128];
 	NoteFilter(int channel, std::vector<NOTE>* notes);
@@ -102,3 +103,4 @@ public:
 bool read_notes(std::istream& in, std::vector<NOTE>* notes);
 #endif // !MIDI_H
 
+Bitmap visualize(const std::vector<NOTE>& notes);

@@ -7,6 +7,6 @@
     * Run the tests. In this case, the line below needs to be active (i.e., not commented out)
     * Run the main() function, in which case you need to remove the line below (preferably by simply commenting it out).
 */
-#define TEST_BUILD
+//#define TEST_BUILD
 
 #endif

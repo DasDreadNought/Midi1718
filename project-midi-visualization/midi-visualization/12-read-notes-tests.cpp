@@ -25,7 +25,6 @@
 
 */
 
-/*
 TEST_CASE("read_notes, zero tracks")
 {
     char buffer[] = {
@@ -42,7 +41,6 @@ TEST_CASE("read_notes, zero tracks")
     REQUIRE(read_notes(ss, &notes));
     REQUIRE(notes.size() == 0);
 }
-
 TEST_CASE("read_notes, no notes in track")
 {
     char buffer[] = {
@@ -110,7 +108,7 @@ TEST_CASE("read_notes, two notes on same track and channel")
     CHECK(notes[0] == NOTE{ 0, 5, 0, 100 });
     CHECK(notes[1] == NOTE{ 0, 8, 200, 100 });
 }
-*/
+
 TEST_CASE("read_notes, two notes on same track different channels")
 {
     char buffer[] = {
@@ -136,7 +134,7 @@ TEST_CASE("read_notes, two notes on same track different channels")
     CHECK(notes[0] == NOTE{ 0, 5, 0, 100 });
     CHECK(notes[1] == NOTE{ 2, 8, 200, 100 });
 }
-/*
+
 TEST_CASE("read_notes, two notes on different tracks")
 {
     char buffer[] = {
@@ -164,8 +162,7 @@ TEST_CASE("read_notes, two notes on different tracks")
     REQUIRE(notes.size() == 2);
     CHECK(notes[0] == NOTE{ 0, 5, 0, 100 });
     CHECK(notes[1] == NOTE{ 0, 88, 0, 100 });
-}/*
-
+}
 TEST_CASE("read_notes, two notes using running status")
 {
     char buffer[] = {
@@ -191,7 +188,7 @@ TEST_CASE("read_notes, two notes using running status")
     CHECK(notes[0] == NOTE{ 0, 5, 0, 100 });
     CHECK(notes[1] == NOTE{ 0, 6, 0, 100 });
 }
-/*
+
 TEST_CASE("read_notes, two notes using note on with 0 velocity")
 {
     char buffer[] = {
@@ -217,7 +214,7 @@ TEST_CASE("read_notes, two notes using note on with 0 velocity")
     CHECK(notes[0] == NOTE{ 0, 5, 0, 100 });
     CHECK(notes[1] == NOTE{ 0, 6, 0, 100 });
 }
-/*
+
 TEST_CASE("read_notes, missing track")
 {
     char buffer[] = {
@@ -233,5 +230,5 @@ TEST_CASE("read_notes, missing track")
 
     REQUIRE(!read_notes(ss, &notes));
 }
-*/
+
 #endif

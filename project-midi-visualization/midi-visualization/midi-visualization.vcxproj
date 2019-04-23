@@ -22,7 +22,7 @@
     <ProjectGuid>{45F05D77-3D11-4671-BD10-5E19006D0636}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>midivisualization</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -158,6 +158,10 @@
     <ClCompile Include="08-event-receiver-tests.cpp" />
     <ClCompile Include="09-note-tests.cpp" />
     <ClCompile Include="10-note-receiver-tests.cpp" />
+    <ClCompile Include="11-multicaster-tests.cpp" />
+    <ClCompile Include="12-read-notes-tests.cpp" />
+    <ClCompile Include="13-visualization.cpp" />
+    <ClCompile Include="14-main.cpp" />
     <ClCompile Include="app.cpp" />
     <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="color.cpp" />
